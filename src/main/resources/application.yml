@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/ekar-assignment
+    username: root
+    password: echotech
+    driver-class-name: com.mysql.cj.jdbc.Driver
