@@ -57,16 +57,4 @@ public class EndpointController {
         log.info("Counter has been reset to initial value of 50");
         CounterSingleton.getInstance().reset(50);
     }
-
-    @GetMapping(value = "/stop-producers")
-    @ResponseStatus(HttpStatus.OK)
-    public void stopAllProducers() {
-        producerService.stopAllProducers();
-    }
-
-    @GetMapping(value = "/stop-consumers")
-    @ResponseStatus(HttpStatus.OK)
-    public void stopAllConsumers() {
-        consumerService.stopAllConsumers();
-    }
 }

@@ -24,11 +24,6 @@ public class ProducerService {
         }
     }
 
-    public void stopAllProducers() {
-        producerExecutor.shutdown();
-        log.info("Stopping all producer threads!");
-    }
-
     class ProducerCallable implements Callable<Void> {
 
         @Override

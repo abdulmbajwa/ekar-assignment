@@ -24,11 +24,6 @@ public class ConsumerService {
         }
     }
 
-    public void stopAllConsumers() {
-        consumerExecutor.shutdown();
-        log.info("Stopping all consumer threads!");
-    }
-
     class ConsumerCallable implements Callable<Void> {
         @Override
         public Void call() throws Exception {

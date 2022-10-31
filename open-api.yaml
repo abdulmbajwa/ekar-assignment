@@ -1,0 +1,72 @@
+---
+openapi: 3.0.0
+info:
+  title: Ekar Assignment API
+  description: Ekar Assignment
+  contact:
+    email: abdulrahimbajwa@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+  - url: https://virtserver.swaggerhub.com/ABDULRAHIMBAJWA_1/Ekar-Assignment/1.0.0
+    description: Ekar Assignment
+paths:
+  /update-threads:
+    get:
+      summary: Updates running producer and consumer threads
+      description: |
+        Receives two request parameters, the first one will increase the number of producer threads. The second parameter will increase the number of consumer threads
+      operationId: update-threads
+      parameters:
+        - name: incrementProducer
+          in: query
+          required: true
+          style: form
+          explode: true
+          schema:
+            minimum: 0
+            type: integer
+            format: int32
+        - name: incrementConsumer
+          in: query
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 0
+            type: integer
+            format: int32
+      responses:
+        "201":
+          description: Threads were updated successfully
+        "400":
+          description: bad input parameter
+  /reset-count:
+    get:
+      summary: Resets counter to default value of 50
+      description: |
+        Resets counter to default value of 50
+      operationId: reset-count
+      responses:
+        "200":
+          description: Counter was reset successfully
+  /set-counter:
+    get:
+      summary: Sets counter to value provided
+      operationId: set-counter
+      parameters:
+        - name: value
+          in: query
+          required: true
+          style: form
+          explode: true
+          schema:
+            minimum: 0
+            type: integer
+            format: int32
+      responses:
+        "200":
+          description: Counter was reset successfully
+components: { }
